@@ -2,7 +2,7 @@
 /node_modules
 /public/hot
 /public/storage
-/storage/*
+/storage/logs
 tests/*
 
 # vendors
@@ -10,3 +10,4 @@ vendor/*
 
 # environments
 .env
+.editorconfig
