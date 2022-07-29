@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App - @yield('title')</title>
+@include('Admin::parts.head')
 
-    {{-- link style css --}}
-    <link rel="stylesheet" href="{{ asset('style.css') }}">
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+<body data-topbar="dark">
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        @section('side__bar')
+            @include('Admin::parts.top__bar')
+        @show
 
-</head>
+        <div class="main-content">
+            @yield('main')
 
-<body>
-    @section('sidebar')
-        This is the master sidebar.
+            @section('footer')
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script> © Viettheo.
+                            </div>
+                            <div class="col-sm-6">
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            @show
+        </div>
+    </div>
+    <!-- end begin -->
+    @section('right__bar')
+        @include('Admin::parts.right__bar')
     @show
 
-    <div class="container">
-        @yield('main')
-    </div>
-
-    @section('footer')
-        This is the master footer.
+    @section('javascripts')
+        @include('Admin::parts.vendor__js')
     @show
 </body>
 

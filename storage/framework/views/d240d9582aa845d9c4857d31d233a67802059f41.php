@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App - <?php echo $__env->yieldContent('title'); ?></title>
+<?php echo $__env->make('Admin::parts.head', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-    
-    <link rel="stylesheet" href="<?php echo e(asset('style.css')); ?>">
-    <link rel="shortcut icon" href="<?php echo e(asset('favicon.ico')); ?>" type="image/x-icon">
-</head>
+<body data-topbar="dark">
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <?php $__env->startSection('side__bar'); ?>
+            <?php echo $__env->make('Admin::parts.top__bar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php echo $__env->yieldSection(); ?>
 
-<body>
-    <?php $__env->startSection('sidebar'); ?>
-        This is the master sidebar.
+        <div class="main-content">
+            <?php echo $__env->yieldContent('main'); ?>
+
+            <?php $__env->startSection('footer'); ?>
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script> © Viettheo.
+                            </div>
+                            <div class="col-sm-6">
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            <?php echo $__env->yieldSection(); ?>
+        </div>
+    </div>
+    <!-- end begin -->
+    <?php $__env->startSection('right__bar'); ?>
+        <?php echo $__env->make('Admin::parts.right__bar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <?php echo $__env->yieldSection(); ?>
 
-    <div class="container">
-        <?php echo $__env->yieldContent('main'); ?>
-    </div>
-
-    <?php $__env->startSection('footer'); ?>
-        This is the master footer.
+    <?php $__env->startSection('javascripts'); ?>
+        <?php echo $__env->make('Admin::parts.vendor__js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <?php echo $__env->yieldSection(); ?>
 </body>
 
