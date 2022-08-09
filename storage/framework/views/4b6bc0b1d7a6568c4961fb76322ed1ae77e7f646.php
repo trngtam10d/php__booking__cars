@@ -11,36 +11,42 @@
             <?php echo $__env->make('Admin::parts.title__table', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-xl-12">
                     <div class="card">
                         <div class="card-body">
-
-                            <h5 class="card-title">List of suppliers</h5>
-                            <div class="table-responsive">
-                                <table id="datatable" class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Tên xe</th>
-                                            <th>Tên xe</th>
-                                            <th>Tên xe</th>
-                                            <th>Tên xe</th>
-                                            <th>Tên xe</th>
-                                            <th>Trạng thái</th>
-                                            <th>Cập nhập</th>
-                                            <th>Xóa bỏ</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <h2>Null</h2>
-                                    </tbody>
-                                </table>
+                            <h5>Tổng quát</h5>
+                            <div class="row">
+                                <div class="col-lg-12 border-right">
+                                    <div class="card shadow-none mb-0">
+                                        <div class="border-top">
+                                            <div class="card-body border-bottom">
+                                                <div class="">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-4">
+                                                            <div class="overview-content">
+                                                                <div class="title-name">
+                                                                    <p class="text-muted font-size-13 mb-1">Đang online</p>
+                                                                    <p class="text-muted font-size-13 mb-1">Đang online</p>
+                                                                    <p class="text-muted font-size-13 mb-1">Đang online</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-8 text-end">
+                                                            <p class="text-muted font-size-13 mb-1">Đang online</p>
+                                                            <h4 class="mb-0 font-size-20"></h4>
+                                                        </div>
+                                                    </div>
+                                                    <!-- end row -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- end row -->
             </div>
-
         </div>
     </div>
 

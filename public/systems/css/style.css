@@ -1,0 +1,13 @@
+.html__act--display {
+    display: flex;
+    margin: 0;
+}
+a.btn.btn-primary.btn-sm {
+    margin: 10px 0;
+}
+button.btn.btn-danger.btn-sm.btnDelete {
+    margin: 10px;
+}
+.ml-10 {
+    margin-right: 30px;
+}

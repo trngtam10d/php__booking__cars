@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Model admin
  * */
-class Admin_Model extends Model
+class Admin extends Model
 {
     protected $table = "admin_accounts";
     protected $guarded = [];

@@ -3,7 +3,7 @@
 namespace App\Modules\Admin\Controllers;
 
 use Illuminate\Routing\Controller;
-use App\Modules\Admin\Repositories\Contract\AdminInterface;
+use App\Modules\Admin\Repositories\Contract\InterfaceAdmin;
 
 /**
  * Controller admin
@@ -11,7 +11,7 @@ use App\Modules\Admin\Repositories\Contract\AdminInterface;
 class Index extends Controller
 {
     protected $adminRepository;
-    public function __construct(AdminInterface $adminRepository)
+    public function __construct(InterfaceAdmin $adminRepository)
     {
         $this->adminRepository = $adminRepository;
     }
@@ -19,9 +19,10 @@ class Index extends Controller
     public function index()
     {
         return view("Admin::index", [
-            'all' => $this->adminRepository->__getData(),
+            'all' => $this->adminRepository->geAllDataAdmin(),
         ]);
     }
+
 
     private function _setData()
     {

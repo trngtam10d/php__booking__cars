@@ -26,12 +26,6 @@
                 <i class="mdi mdi-menu"></i>
             </button>
 
-            {{-- <div class="d-none d-lg-inline-block">
-                <button type="button" class="btn header-item noti-icon waves-effect" data-bs-target="#search-wrap">
-                    <i class="mdi mdi-airplane me-2 font-size-16"></i>Đồng bộ
-                </button>
-            </div> --}}
-
         </div>
 
         <div class="d-flex">
@@ -230,31 +224,28 @@
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title">Primarily</li>
                 <li>
-                    <a href="javascript: void(0);" class="waves-effect">
+                    <a href="{{ route('admin') }}" class="waves-effect">
                         <i class="mdi mdi-bus-multiple"></i>
                         <span class="badge rounded-pill bg-danger float-end">9+</span>
                         <span>Dashboard</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        {{-- <li><a href="{{route('main-content.index')}}">Ô tô</a></li> --}}
-                    </ul>
                 </li>
 
                 <!-- Calender -->
-                <li class="menu-title">Các thành phần</li>
+                <li class="menu-title">Components</li>
 
                 <!-- Banner -->
-                {{-- <li>
+                <li>
                     <a href="javascript: void(0);" class="waves-effect">
                         <i class="mdi mdi-atom-variant"></i>
 
-                        <span>Màn hình</span>
+                        <span>Screen</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
 
-                        <li><a href="{{route('banner.index')}}">Banners</a></li>
+                        <li><a href="{{ route('ads.index') }}">Ads Cover</a></li>
                     </ul>
-                </li> --}}
+                </li>
                 {{-- <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="mdi mdi-format-list-bulleted-type"></i>
@@ -279,7 +270,7 @@
                     </ul>
                 </li> --}}
 
-                <li class="menu-title">Hơn</li>
+                <li class="menu-title">more</li>
 
                 <!-- Pages -->
                 {{-- <li>
