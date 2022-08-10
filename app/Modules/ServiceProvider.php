@@ -39,8 +39,9 @@ class ServiceProvider extends Service_Provider
     public function register()
     {
         $this->app->bind(
-            'App\Modules\Admin\Repositories\Contract\AdminInterface',
-            'App\Modules\Admin\Repositories\Eloquent\AdminEloquent'
+            // Admin
+            'App\Modules\Admin\Repositories\Contract\InterfaceAdmin',
+            'App\Modules\Admin\Repositories\Eloquent\Eloquent',
         );
     }
 }
