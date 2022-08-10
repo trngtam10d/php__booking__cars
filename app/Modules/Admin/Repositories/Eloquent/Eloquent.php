@@ -14,7 +14,11 @@ use App\Modules\Admin\Models\Ads;
  * */
 
 use App\Modules\Admin\Repositories\Contract\InterfaceAdmin;
+use App\Modules\Admin\Requests\RequestAdmin;
 use App\Modules\Admin\Requests\RequestAds;
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class Eloquent implements InterfaceAdmin
 {
@@ -26,6 +30,18 @@ class Eloquent implements InterfaceAdmin
         return Admin::all();
     }
 
+    public function getSignIn(RequestAdmin $request)
+    {
+        $data = $request->all();
+        if (Auth::guard("admin")->attempt(['email' => $request->email, 'password' => $request->password, 'status' => 'active'])) {
+            Session::put('account', $data['email']);
+            request()->session()->flash('success', 'Successfully login');
+            return redirect()->intended('/admin');
+        } else {
+            request()->session()->flash('error', 'Invalid email and password pleas try again!');
+            return redirect()->back();
+        }
+    }
     /**
      * Ads cover
      * */

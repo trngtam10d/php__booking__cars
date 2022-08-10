@@ -4,6 +4,8 @@ namespace App\Modules\Admin\Controllers;
 
 use Illuminate\Routing\Controller;
 use App\Modules\Admin\Repositories\Contract\InterfaceAdmin;
+use App\Modules\Admin\Requests\RequestAdmin;
+
 
 /**
  * Controller admin
@@ -24,8 +26,12 @@ class Index extends Controller
     }
 
 
-    private function _setData()
+    public function signin()
     {
-        # code...
+        return view("Admin::account.signin");
+    }
+    public function sendLogin(RequestAdmin $request)
+    {
+        $this->adminRepository->getSignIn($request);
     }
 }
