@@ -18,7 +18,8 @@ class Admin
     {
         if (Auth::check()) {
             return $next($request);
+        } else {
+            return redirect('/admin/singing');
         }
-        return redirect('/admin/singing');
     }
 }
