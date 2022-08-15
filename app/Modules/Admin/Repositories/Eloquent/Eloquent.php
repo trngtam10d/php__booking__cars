@@ -18,7 +18,6 @@ use App\Modules\Admin\Requests\RequestAdmin;
 use App\Modules\Admin\Requests\RequestAds;
 
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
 
 class Eloquent implements InterfaceAdmin
 {
@@ -27,20 +26,21 @@ class Eloquent implements InterfaceAdmin
      */
     public function geAllDataAdmin()
     {
+
         return Admin::all();
     }
 
     public function getSignIn(RequestAdmin $request)
     {
-        $data = $request->all();
-        if (Auth::guard("admin")->attempt(['email' => $request->email, 'password' => $request->password, 'status' => 'active'])) {
-            Session::put('account', $data['email']);
-            request()->session()->flash('success', 'Successfully login');
-            return redirect()->intended('/admin');
-        } else {
-            request()->session()->flash('error', 'Invalid email and password pleas try again!');
-            return redirect()->back();
+        $credentials = $request->getCredentials();
+
+        if (!Auth::validate($credentials)) {
+            return redirect()->to('login')->withErrors(trans('auth.failed'));
         }
+        dd($credentials);
+        $user = Auth::getProvider()->retrieveByCredentials($credentials);
+        Auth::login($user);
+        return redirect()->intended();
     }
     /**
      * Ads cover

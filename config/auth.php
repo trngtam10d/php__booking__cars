@@ -73,7 +73,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-        'admins' => [
+        'admin' => [
             'driver' => 'eloquent',
             'model' => App\Modules\Admin\Models\Admin::class,
         ],
@@ -105,13 +105,7 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
-        ],
-        // 'admins' => [
-        //     'provider' => 'admin_accounts',
-        //     'table' => 'password_resets',
-        //     'expire' => 60,
-        //     'throttle' => 60,
-        // ],
+        ]
     ],
 
     /*
