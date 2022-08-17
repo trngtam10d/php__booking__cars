@@ -22,13 +22,12 @@
                 @error('password')
                     <span id="vaild-pass">{{ $message }}</span>
                 @enderror
-                <input oninput="return formvalid()" type="password" name="password" required placeholder="Password" id="pass"
+                <input type="password" name="password" required placeholder="Password" id="js_password_input"
                     autocomplete="off" />
-                <img src="https://cdn2.iconfinder.com/data/icons/basic-ui-interface-v-2/32/hide-512.png"
-                    onclick="show()" id="showimg">
-                <span id="vaild-pass"></span>
+                <img src="https://cdn2.iconfinder.com/data/icons/basic-ui-interface-v-2/32/hide-512.png" id="js__show_password">
+                <span id="form__text"></span>
                 <button type="submit">SIGN IN</button>
-                <p class="message"><a href="#">Forgot your password?</a></p>
+                {{-- <p class="message"><a href="#">Forgot your password?</a></p> --}}
             </form>
         </div>
     </div>

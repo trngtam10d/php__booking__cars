@@ -45,7 +45,7 @@
                                                 <td>{{ $cover->title }}</td>
                                                 <td>{!! $cover->description !!}</td>
                                                 <td>
-                                                    <div class="img-banner"><img src="{{ $cover->photo }}"></div>
+                                                    <div class="html_image"><img src="{{ $cover->photo }}"></div>
                                                 </td>
                                                 <td>
                                                     @if ($cover->type == 1)
