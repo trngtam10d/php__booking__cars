@@ -176,7 +176,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        App\Modules\ServiceProvider::class
+        App\Modules\ServiceProvider::class,
+        App\Modules\GoogleServiceProvider::class
 
     ],
 
