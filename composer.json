@@ -28,8 +28,8 @@
         "nunomaduro/collision": "^4.1",
         "laravel/socialite": "^5.2",
         "laravel/tinker": "^2.0",
-        "masbug/flysystem-google-drive-ext": "*",
-        "google/apiclient": "*"
+        "google/apiclient": "*",
+        "nao-pon/flysystem-google-drive": "~1.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5",

@@ -17,7 +17,7 @@ Route::group(['module' => 'Admin', 'middleware' => 'web', 'namespace' => "App\Mo
             Route::post("/save",  "Ads@store")->name('ads.store');
         });
         Route::get('upload-file', function () {
-            Storage::disk('google')->put('google-drive.txt', 'Google Drive As Filesystem In Laravel (ManhDanBlogs)');
+            Storage::disk('google_drive')->put('test.txt', 'Hello World');
             dd('Đã upload file lên google drive thành công!');
         });
     });
