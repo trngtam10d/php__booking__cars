@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('title', 'Page Title'); ?>
 
 <?php $__env->startSection('sidebar'); ?>

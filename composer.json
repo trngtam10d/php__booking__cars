@@ -28,9 +28,11 @@
         "nunomaduro/collision": "^4.1",
         "laravel/socialite": "^5.2",
         "laravel/tinker": "^2.0",
-        "phpunit/phpunit": "^8.5"
+        "google/apiclient": "*",
+        "nao-pon/flysystem-google-drive": "~1.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.5"
+        "phpunit/phpunit": "^8.5",
+        "laravel/ui": "*"
     }
 }

@@ -20,7 +20,7 @@ class Index extends Controller
 
     public function index()
     {
-        if (Auth::check()) {
+        if (!Auth::check()) {
             return view("Admin::index", [
                 'all' => $this->adminRepository->geAllDataAdmin(),
             ]);
@@ -31,7 +31,7 @@ class Index extends Controller
 
     public function signin()
     {
-        if (!Auth::check()) {
+        if (Auth::check()) {
             return view("Admin::account.signin");
         }
         return redirect()->route('admin');

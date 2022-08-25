@@ -32,15 +32,9 @@ class Eloquent implements InterfaceAdmin
 
     public function getSignIn(RequestAdmin $request)
     {
-        $credentials = $request->getCredentials();
-
-        if (!Auth::validate($credentials)) {
-            return redirect()->to('login')->withErrors(trans('auth.failed'));
-        }
-        dd($credentials);
-        $user = Auth::getProvider()->retrieveByCredentials($credentials);
-        Auth::login($user);
-        return redirect()->intended();
+        $sql = Admin::query()->where('email', $request->email)
+            ->where('password', $request->password)->first();
+        return $sql;
     }
     /**
      * Ads cover
@@ -53,7 +47,7 @@ class Eloquent implements InterfaceAdmin
     {
         $data = $request->all();
         if ($request->upload) {
-            $data['photo'] = 'http://localhost/php__booking/public/img/thumbnail/' . $request->upload->getClientOriginalName();
+            $data['photo'] =  'http://localhost/php__booking/public/img/thumbnail/' . $request->upload->getClientOriginalName();
             $request->upload->move('public/img/thumbnail', $request->upload->getClientOriginalName());
         }
         $countActive = Ads::where('status', 'on')->count();
