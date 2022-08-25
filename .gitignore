@@ -10,6 +10,8 @@ node_modules/*
 
 # environments
 .env
+.env.local
+.env.production
 .editorconfig
 
 # logs and testings
